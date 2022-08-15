@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+  {% block title %} Acerca de {% endblock%}
+
+    {%block content %}
+
+    {% block header_img %}{{ url_for('./static', filename='img/about-bg.jpg') }}{% endblock %}
+    {% block header_title %}Acerca de{% endlock%}
+    {% block header_sub %}Areas{% endlock%}
+      
+        {% block content %}    
+	    <!-- Contenido Principal -->
+	    <div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-4 offset-lg-1">
+				<img class="img-fluid homes3-bg.jpg" src="{{ url_for('static', filename='img/home3-bg.jpg') }}" alt="">
+			</div>
+		<div class="col-lg-7 col-md-8">
+			<h2 class="section-heading">Santa elena ex-fabrica</h2>
+			<p>Recepciones SANTA ELENA 
+				Cuenta con diversas áreas para cada momento especial de tu evento.
+				Ven a conocernos!</p>
+		</div>
+		</div>
+		</div>
+	{% endblock %}
+	     

@@ -1,0 +1,41 @@
+  {% extends 'base.html' %}
+
+  {% block title %} Opiniones {% endblock%}
+
+  {% block header_img %}{{ url_for('static', filename='img/portfolio-bg.jpg') }}{% endblock %}
+{% block header_title %}Portfolio{% endblock %}
+{% block header_sub %}Currículo{% endblock %}
+
+  {%block content %}
+	  <!-- Cabecera -->
+	    <header class="masthead" style="background-image: url('img/portfolio-bg.jpg')">
+	      <div class="overlay"></div>
+	      <div class="container">
+	        <div class="row">
+	          <div class="col-lg-8 col-md-10 mx-auto">
+	            <div class="site-heading">
+	              <h1>Reseñas</h1>
+	              <span class="subheading">Opiniones </span>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </header>
+
+	    <!-- Contenido Principal -->
+	    {%block content%}
+        
+    <div class="row project">
+        {% for project in projects %}
+	<div class="row project">  	
+			<div class="col-lg-3 col-md-4 offset-lg-1">
+				<img class="img-fluid" src="{{ url_for('static', filename='images/'+project.image) }}" alt="">
+			</div>
+		  <div class="col-lg-7 col-md-8">
+				<h2 class="section-heading title">{{ project.title }}</h2>   
+			<p>{{ project.description }}</p>
+			<p><a href="{{ project.web }}">Más información</a></p>
+			</div>
+		</div>
+	</div>
+{% endblock %}
